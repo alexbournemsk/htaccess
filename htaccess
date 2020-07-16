@@ -1,0 +1,15 @@
+//редирект с только домена на поддомен
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} !^online\.muzrum\.com$ [NC]
+RewriteRule ^$ http://online.muzrum.com/ [R=301]
+
+//редирект всех страниц домена на поддомен
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^muzrum\.com
+RewriteRule ^(.*)$ http://online.muzrum.com/$1 [R=301,L] 
+
+RewriteCond %{HTTP_HOST} ^www\.muzrum\.com
+RewriteRule ^(.*)$ http://online.muzrum.com/$1 [R=301,L] 
